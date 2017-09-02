@@ -1,0 +1,55 @@
+
+<ion-header>
+    <ion-toolbar color="primary">
+     <ion-title>Signup</ion-title>
+     <ion-buttons end>
+       <button ion-button icon-only (click)="close()"><ion-icon name="close"></ion-icon></button>
+     </ion-buttons>
+    </ion-toolbar>
+   </ion-header>
+
+
+<ion-content>
+<div class="pc">
+<img [src]="image" width=70px height=70px  style="border-radius:100px">
+</div>
+<div class="mail-details">
+
+</div>
+<div class="remaining-forms">
+    <ion-list no-lines>
+        
+           <ion-item>
+             <ion-label floating>Mobile</ion-label>
+             <ion-input [(ngModel)]="mobile" type="tel"></ion-input>
+           </ion-item>
+        
+           <ion-item>
+              <ion-label>Role</ion-label>
+              <ion-select [(ngModel)]="role">
+                <ion-option value="teacher">Techer</ion-option>
+                <ion-option value="student">Student</ion-option>
+              </ion-select>
+            </ion-item>
+            <ion-item>
+             <h3>choose your langs</h3>
+            </ion-item>
+            <ion-item>
+              <ion-label>nodejs</ion-label>
+              <ion-checkbox [(ngModel)]="nodejs"></ion-checkbox>
+            </ion-item>
+          
+            <ion-item>
+              <ion-label>purescript</ion-label>
+              <ion-checkbox [(ngModel)]="purescript" ></ion-checkbox>
+            </ion-item>
+          
+            <ion-item>
+              <ion-label>functional programming</ion-label>
+              <ion-checkbox [(ngModel)]="fp"></ion-checkbox>
+            </ion-item>
+            <button ion-button (click)="save()">Signup</button>
+        
+         </ion-list>
+</div>
+</ion-content>
