@@ -1,0 +1,107 @@
+
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>ssignup</ion-title>
+    <ion-buttons end>
+        <button ion-button icon-only (click)="close()"><ion-icon name="close"></ion-icon></button>
+      </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<ion-grid>
+  <ion-row>
+    <ion-col>
+      <img src ="">
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-list>
+          <ion-item>
+              <ion-label color="primary" floating>mobileNumber</ion-label>
+              <ion-input [(ngModel)]="mobileNumber" type="tel"></ion-input>
+            </ion-item>
+      </ion-list>
+    </ion-col>
+    <!-- role coosing -->
+  </ion-row>
+  <p>choose to teach or learn</p>
+  <ion-row>  
+    <ion-col >  
+        <ion-item>
+            <ion-label>i want to teach</ion-label>
+            <ion-checkbox [(ngModel)]="mentor" ></ion-checkbox>
+          </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col >
+        <ion-item>
+            <ion-label>i want to learn</ion-label>
+            <ion-checkbox [(ngModel)]="student" ></ion-checkbox>
+          </ion-item>
+    </ion-col>
+  </ion-row>
+  <!-- end of role choose -->
+  <ion-row *ngIf="mentor">
+      <ion-col>
+        <p>choose to teach</p>
+      </ion-col>
+    </ion-row>
+  <ion-row *ngIf="mentor">   
+    <ion-col col-6>  
+        <ion-item>
+            <ion-label>Nodejs</ion-label>
+            <ion-checkbox [(ngModel)]="nodejs" ></ion-checkbox>
+          </ion-item>
+    </ion-col>
+    <ion-col col-6>
+        <ion-item>
+            <ion-label>Purescript</ion-label>
+            <ion-checkbox [(ngModel)]="purescript" ></ion-checkbox>
+          </ion-item>
+    </ion-col>
+
+  </ion-row>
+  <ion-row *ngIf="mentor">
+      <ion-col col-6>
+          <ion-item>
+              <ion-label>functionalProgramming</ion-label>
+              <ion-checkbox [(ngModel)]="functionalProgramming" ></ion-checkbox>
+            </ion-item>
+      </ion-col>
+      <ion-col col-6>
+          <ion-item>
+              <ion-label>React native</ion-label>
+              <ion-checkbox [(ngModel)]="reactNative" ></ion-checkbox>
+            </ion-item>
+      </ion-col>
+  
+    </ion-row>
+    <ion-row *ngIf="mentor">
+      <ion-col>
+          <ion-item>
+              <ion-textarea placeholder="few words about you" [(ngModel)]="description"></ion-textarea>
+            </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="student">
+        <ion-col>
+            <ion-item >
+              <button ion-button (click)="save()" full>signup</button>
+              </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+          <ion-col>
+              <ion-item *ngIf="mentor">
+                <button ion-button (click)="save()" full>signup</button>
+                </ion-item>
+          </ion-col>
+        </ion-row>
+</ion-grid>
+</ion-content>

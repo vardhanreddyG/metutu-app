@@ -1,3 +1,45 @@
+<<<<<<< HEAD
+
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>home</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <!-- searchbar -->
+  <ion-searchbar
+  [(ngModel)]="myInput"
+  [showCancelButton]="shouldShowCancel"
+  (ionInput)="onInput($event)"
+  (ionCancel)="onCancel($event)">
+</ion-searchbar>
+
+<!-- cardtempalte -->
+<ion-card *ngFor ="let m of mentors" (click)="detail(m)">
+    
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="">
+        </ion-avatar>
+        <h2>{{m.name}}</h2>
+      </ion-item>
+      <ion-card-content>
+        <p>{{m.description}}</p>
+      </ion-card-content>
+      <ion-row align-items-center	>
+        <ion-col>
+            <button ion-button icon-left clear small>
+              <ion-icon name="contact"></ion-icon>
+              <div>profile</div>
+            </button>
+          </ion-col>
+      </ion-row>
+    </ion-card>
+=======
 <ion-header>
   <ion-navbar color=primary>
     <button ion-button menuToggle>
@@ -17,4 +59,5 @@
 <ion-card *ngFor="let t of teachers" >
 {{t.Name}}
 </ion-card>
+>>>>>>> d802e4fb63b16a94eafb061d993cf9bbeb481312
 </ion-content>
